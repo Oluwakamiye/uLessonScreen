@@ -1,0 +1,181 @@
+{
+    "data": {
+        "status": "success",
+        "message": "success",
+        "subjects": [
+            {
+                "id": 2,
+                "name": "Mathematics",
+                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/subject_icons/icons/2/thumb/thumb.jpeg",
+                "chapters": [
+                    {
+                        "id": 151,
+                        "name": "Exam Test",
+                        "lessons": [
+                            {
+                                "id": 1168,
+                                "name": "dsfjdfkj",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/1/original/stapler-FuXgvD.mp4",
+                                "subject_id": 2,
+                                "chapter_id": 151
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 85,
+                "name": "English",
+                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/subject_icons/icons/defaults/thumb/subject.png",
+                "chapters": [
+                    {
+                        "id": 359,
+                        "name": "Prose",
+                        "lessons": [
+                            {
+                                "id": 3118,
+                                "name": "vvvffg",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/70/original/stapler-bRXerd.MP4",
+                                "subject_id": 85,
+                                "chapter_id": 359
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Biology",
+                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/subject_icons/icons/12/thumb/download%20%2829%29.jpg",
+                "chapters": [
+                    {
+                        "id": 45,
+                        "name": "Ecosystem-2",
+                        "lessons": [
+                            {
+                                "id": 3355,
+                                "name": "Nim test",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/71/original/stapler-CPAC2j.mp4",
+                                "subject_id": 5,
+                                "chapter_id": 45
+                            }
+                        ]
+                    },
+                    {
+                        "id": 38,
+                        "name": "346",
+                        "lessons": [
+                            {
+                                "id": 110,
+                                "name": "346lesson",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/14/original/stapler-4h3f3u.mp4",
+                                "subject_id": 5,
+                                "chapter_id": 38
+                            },
+                            {
+                                "id": 110,
+                                "name": "347lesson",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/14/original/stapler-4h3f3u.mp4",
+                                "subject_id": 5,
+                                "chapter_id": 38
+                            }
+                        ]
+                    },
+                    {
+                        "id": 43,
+                        "name": "Ecosystem",
+                        "lessons": [
+                            {
+                                "id": 118,
+                                "name": "Evidence of Photosynthesis in Plants - Starchy Leaves!Evidence of Photosynthesis in Plants - Starchy Leaves!",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/4/thumb/download%20%281%29.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/18/original/stapler-KIrAIT.mp4",
+                                "subject_id": 5,
+                                "chapter_id": 43
+                            },
+                            {
+                                "id": 3067,
+                                "name": "Adding tags",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/8/original/stapler-EDH5yW.mp4",
+                                "subject_id": 5,
+                                "chapter_id": 43
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Physics",
+                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/subject_icons/icons/13/thumb/download%20%2812%29.png",
+                "chapters": [
+                    {
+                        "id": 14,
+                        "name": "NdY01",
+                        "lessons": [
+                            {
+                                "id": 45,
+                                "name": "sdsd",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/13/original/stapler-Vc6HbH.mp4",
+                                "subject_id": 3,
+                                "chapter_id": 14
+                            },
+                            {
+                                "id": 27,
+                                "name": "NdY-02",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/11/original/stapler-AigUz8.mp4",
+                                "subject_id": 3,
+                                "chapter_id": 14
+                            },
+                            {
+                                "id": 44,
+                                "name": "sdsd",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/12/original/stapler-PzrdeU.mp4",
+                                "subject_id": 3,
+                                "chapter_id": 14
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Chemistry",
+                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/subject_icons/icons/11/thumb/download%20%2823%29.jpg",
+                "chapters": [
+                    {
+                        "id": 8,
+                        "name": "Test Chapter",
+                        "lessons": [
+                            {
+                                "id": 134,
+                                "name": "ABC Lesson",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/4/original/stapler-Y8dgSj.mp4",
+                                "subject_id": 4,
+                                "chapter_id": 8
+                            },
+                            {
+                                "id": 149,
+                                "name": "T Lesson",
+                                "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+                                "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/21/original/stapler-JwJBYC.mp4",
+                                "subject_id": 4,
+                                "chapter_id": 8
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
