@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,6 +59,7 @@
                         </connections>
                     </button>
                 </subviews>
+                <color key="backgroundColor" name="uLessonGrayBackground"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="IlY-1X-fr4" secondAttribute="trailing" id="B6P-LJ-Tfi"/>
                     <constraint firstItem="IlY-1X-fr4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BDf-zR-FN6"/>
@@ -68,6 +70,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="cellBackgroundView" destination="H2p-sc-9uM" id="VSz-DL-2nb"/>
                 <outlet property="playButton" destination="Jp9-WX-VMs" id="sww-Y7-kjV"/>
@@ -81,5 +84,8 @@
     <resources>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="video_thumbnail_1" width="30" height="20"/>
+        <namedColor name="uLessonGrayBackground">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -13,6 +13,7 @@ class HomeViewController: UIViewController{
     //Links to views from storyboard
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var homeBackgroundView: UIView!
     
     var response : ULessonResponseObject?
     var videoThumbNails: VideoThumbNailList?
@@ -23,10 +24,11 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Customise views
         tableView.backgroundColor = .clear
         collectionView.backgroundColor = .clear
         
+        //load data
         loadData()
         setNumberOfDisplayedVideos()
         
@@ -63,13 +65,12 @@ class HomeViewController: UIViewController{
         response = loadJSONFromFileToObject("Resource.json")
         videoThumbNails = loadJSONFromFileToObject("VideoResource.json")
         
-        NetworkController.makeGetCall("", errorHandler: {
+        NetworkController.makeGetCall(homeURL, errorHandler: {
             errorString in
             
             let alert = UIAlertController(title: "Error loading data", message: "We could not load online data. We will continue with offline data", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
         }){
             response in
             self.processResponseFromNetwork(responseObject: response)
@@ -83,8 +84,8 @@ class HomeViewController: UIViewController{
     
     //Button action to display more items on the tableview
     @IBAction func seeMoreVideos(_ sender: UIButton){
+        sender.setImage(isShowingAllVideos ? UIImage(named: "HomeButtonImage2") : UIImage(named: "HomeButtonImage"), for: .normal)
         setNumberOfDisplayedVideos()
-        sender.imageView?.image = isShowingAllVideos ? UIImage(named: "HomeButtonImage2") : UIImage(named: "HomeButtonImage")
         tableView.reloadData()
         collectionView.reloadData()
     }

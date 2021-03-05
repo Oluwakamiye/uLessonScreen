@@ -98,7 +98,7 @@
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0LF-jM-0Ql">
                                                         <rect key="frame" x="0.0" y="335.33333333333331" width="358.66666666666669" height="271.99999999999994"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="272" id="Vxm-Gd-VKM"/>
                                                         </constraints>
@@ -134,7 +134,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="uLessonGrayBackground"/>
                         <constraints>
                             <constraint firstItem="eI0-fA-VZ4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ALx-7H-Ybs"/>
                             <constraint firstItem="eI0-fA-VZ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aoc-Pg-mPD"/>
@@ -145,6 +145,7 @@
                     <navigationItem key="navigationItem" title="Dashboard" id="2AF-5C-VSf"/>
                     <connections>
                         <outlet property="collectionView" destination="Zge-zX-oUO" id="Ism-JZ-dQK"/>
+                        <outlet property="homeBackgroundView" destination="8bC-Xf-vdC" id="fCM-PS-Jap"/>
                         <outlet property="tableView" destination="0LF-jM-0Ql" id="Fc4-bv-N2v"/>
                     </connections>
                 </viewController>
