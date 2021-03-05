@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Home View Controller-->
+        <!--Dashboard-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="uLesson" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,19 +27,19 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kp2-06-FFV" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="374.66666666666669" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374.66666666666669" height="900"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lwc-d7-0ah">
-                                                <rect key="frame" x="8" y="28" width="358.66666666666669" height="668.66666666666663"/>
+                                                <rect key="frame" x="8" y="28" width="358.66666666666669" height="666.33333333333337"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Simbi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-qq-szf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="358.66666666666669" height="38.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="358.66666666666669" height="37.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="32"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-zX-oUO">
-                                                        <rect key="frame" x="0.0" y="48.666666666666657" width="358.66666666666669" height="239.99999999999997"/>
+                                                        <rect key="frame" x="0.0" y="47.333333333333343" width="358.66666666666669" height="240.00000000000003"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="240" id="uqg-fe-OX6"/>
@@ -91,20 +91,20 @@
                                                         </cells>
                                                     </collectionView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently watched topics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWz-7r-9xo">
-                                                        <rect key="frame" x="0.0" y="298.66666666666669" width="358.66666666666669" height="29"/>
+                                                        <rect key="frame" x="0.0" y="297.33333333333331" width="358.66666666666669" height="28"/>
                                                         <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0LF-jM-0Ql">
-                                                        <rect key="frame" x="0.0" y="337.66666666666669" width="358.66666666666669" height="272.00000000000006"/>
+                                                        <rect key="frame" x="0.0" y="335.33333333333331" width="358.66666666666669" height="271.99999999999994"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="272" id="Vxm-Gd-VKM"/>
                                                         </constraints>
                                                     </tableView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUB-v0-23d">
-                                                        <rect key="frame" x="0.0" y="619.66666666666663" width="358.66666666666669" height="49"/>
+                                                        <rect key="frame" x="0.0" y="617.33333333333337" width="358.66666666666669" height="49"/>
                                                         <state key="normal" image="HomeButtonImage"/>
                                                         <connections>
                                                             <action selector="seeMoreVideos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="07i-Q6-ibz"/>
@@ -115,7 +115,7 @@
                                         </subviews>
                                         <color key="backgroundColor" name="uLessonGrayBackground"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1000" id="V4P-MR-NJN"/>
+                                            <constraint firstAttribute="height" constant="900" id="V4P-MR-NJN"/>
                                             <constraint firstItem="lwc-d7-0ah" firstAttribute="top" secondItem="kp2-06-FFV" secondAttribute="topMargin" constant="20" id="YLv-hG-nZv"/>
                                             <constraint firstItem="lwc-d7-0ah" firstAttribute="leading" secondItem="kp2-06-FFV" secondAttribute="leadingMargin" id="bqt-Tc-MnQ"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="lwc-d7-0ah" secondAttribute="trailing" id="vC3-Fv-SIU"/>
@@ -142,7 +142,7 @@
                             <constraint firstItem="eI0-fA-VZ4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xdU-qV-HvK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2AF-5C-VSf"/>
+                    <navigationItem key="navigationItem" title="Dashboard" id="2AF-5C-VSf"/>
                     <connections>
                         <outlet property="collectionView" destination="Zge-zX-oUO" id="Ism-JZ-dQK"/>
                         <outlet property="tableView" destination="0LF-jM-0Ql" id="Fc4-bv-N2v"/>
@@ -160,15 +160,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bBZ-qg-BCM">
-                                <rect key="frame" x="0.0" y="117.00000000000001" width="114.66666666666667" height="45.666666666666671"/>
-                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fw6-1N-YnG">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bBZ-qg-BCM">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="500"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bBZ-qg-BCM" firstAttribute="width" secondItem="uSU-vs-4Jk" secondAttribute="width" id="9D7-9H-teQ"/>
+                                    <constraint firstItem="bBZ-qg-BCM" firstAttribute="top" secondItem="7Hv-2U-aoK" secondAttribute="top" constant="20" id="A0A-4g-PCE"/>
+                                    <constraint firstItem="bBZ-qg-BCM" firstAttribute="trailing" secondItem="7Hv-2U-aoK" secondAttribute="trailing" id="TuV-1k-aA1"/>
+                                    <constraint firstItem="bBZ-qg-BCM" firstAttribute="leading" secondItem="7Hv-2U-aoK" secondAttribute="leading" id="nLx-51-0yN"/>
+                                    <constraint firstItem="bBZ-qg-BCM" firstAttribute="bottom" secondItem="7Hv-2U-aoK" secondAttribute="bottom" id="oim-Fa-Kpj"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="7Hv-2U-aoK"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="uSU-vs-4Jk"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y3B-Nr-rpc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="uLessonGrayBackground"/>
                         <constraints>
-                            <constraint firstItem="bBZ-qg-BCM" firstAttribute="top" secondItem="y3B-Nr-rpc" secondAttribute="top" constant="29" id="6hb-cf-5MC"/>
-                            <constraint firstItem="bBZ-qg-BCM" firstAttribute="leading" secondItem="y3B-Nr-rpc" secondAttribute="leading" id="MLE-a3-4BE"/>
+                            <constraint firstItem="y3B-Nr-rpc" firstAttribute="bottom" secondItem="Fw6-1N-YnG" secondAttribute="bottom" id="BQG-bX-anN"/>
+                            <constraint firstItem="Fw6-1N-YnG" firstAttribute="leading" secondItem="y3B-Nr-rpc" secondAttribute="leading" id="U5c-aH-Llt"/>
+                            <constraint firstItem="y3B-Nr-rpc" firstAttribute="trailing" secondItem="Fw6-1N-YnG" secondAttribute="trailing" id="ZpJ-0A-Cfh"/>
+                            <constraint firstItem="Fw6-1N-YnG" firstAttribute="top" secondItem="y3B-Nr-rpc" secondAttribute="top" id="c8P-MW-mle"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ofN-4H-hcH"/>
@@ -178,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51b-Yw-xLm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1434" y="16"/>
+            <point key="canvasLocation" x="1504.8" y="15.517241379310345"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SX1-yW-s4g">

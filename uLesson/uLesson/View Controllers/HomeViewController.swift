@@ -10,6 +10,7 @@ import AVKit
 
 class HomeViewController: UIViewController{
     
+    //Links to views from storyboard
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -22,20 +23,24 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
         tableView.backgroundColor = .clear
         collectionView.backgroundColor = .clear
-        // Do any additional setup after loading the view.
-        loadResponseObject()
+        
+        loadData()
         setNumberOfDisplayedVideos()
         
+        //register custom TableViewCell
         tableView.register(UINib(nibName: "VideoItemTableViewCell", bundle: nil), forCellReuseIdentifier: "VideoItemTableViewCell")
         
+        //Collection Views datasources and delegates
         tableView.delegate = self
         tableView.dataSource = self
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
+    //Segue from Home Screen to Subject Detail Screen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "HomeToSubjectDetailsSegue"{
             guard
@@ -53,11 +58,30 @@ class HomeViewController: UIViewController{
         }
     }
 
-    func loadResponseObject(){
+    //Load data from hard coded json file, then load from network call
+    func loadData(){
         response = loadJSONFromFileToObject("Resource.json")
         videoThumbNails = loadJSONFromFileToObject("VideoResource.json")
+        
+        NetworkController.makeGetCall("", errorHandler: {
+            errorString in
+            
+            let alert = UIAlertController(title: "Error loading data", message: "We could not load online data. We will continue with offline data", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }){
+            response in
+            self.processResponseFromNetwork(responseObject: response)
+        }
     }
     
+    //Process data from network call
+    func processResponseFromNetwork(responseObject: ULessonResponseObject){
+        self.response = responseObject
+    }
+    
+    //Button action to display more items on the tableview
     @IBAction func seeMoreVideos(_ sender: UIButton){
         setNumberOfDisplayedVideos()
         sender.imageView?.image = isShowingAllVideos ? UIImage(named: "HomeButtonImage2") : UIImage(named: "HomeButtonImage")
@@ -65,6 +89,7 @@ class HomeViewController: UIViewController{
         collectionView.reloadData()
     }
     
+    //Set number of displayed videos
     func setNumberOfDisplayedVideos(){
         if let videoThumbNails = self.videoThumbNails{
             if isShowingAllVideos{
@@ -78,7 +103,8 @@ class HomeViewController: UIViewController{
         isShowingAllVideos.toggle()
     }
     
-    func navigateToVideoController(_ url: String, isAutoPlay: Bool){
+    //Navigate to Online video player
+    func navigateToVideoController(_ url: String, isAutoPlay: Bool = true){
         guard let url = URL(string: url) else {
             return
         }
@@ -147,12 +173,26 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.subjectLabel.textColor = subjectColorDictionary[videoThumbNailItem!.subject.capitalized]
         cell.topicLabel.text = videoThumbNailItem?.topic
         cell.topicLabel.font = UIFont(name: "Mulish", size: 15)
-        cell.cellBackgroundColor.backgroundColor = .clear
+        cell.cellBackgroundView.backgroundColor = .clear
         cell.playButton.tintColor = subjectColorDictionary[videoThumbNailItem!.subject.capitalized]
+        cell.actionToTake = {
+            self.onSelectTableViewCellAction(indexPath)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! VideoItemTableViewCell
+        onSelectTableViewCellAction(indexPath)
+        cell.isSelected = false
+    }
+    
+    func onSelectTableViewCellAction(_ indexPath: IndexPath){
+        let videoThumbNailItem = videoThumbNails?.data[indexPath.row]
+        navigateToVideoController(videoThumbNailItem!.urlString)
     }
 }

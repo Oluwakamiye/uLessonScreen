@@ -12,5 +12,5 @@ struct VideoThumbNailList: Codable{
 }
 
 struct VideoThumbNailItem: Codable {
-    var subject, imageName, topic: String
+    var subject, imageName, topic, urlString: String
 }

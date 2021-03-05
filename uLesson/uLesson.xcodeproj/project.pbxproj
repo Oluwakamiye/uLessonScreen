@@ -32,7 +32,8 @@
 		C55E413725F1638E00D66668 /* VideoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C55E413525F1638E00D66668 /* VideoItemTableViewCell.xib */; };
 		C55E415B25F218B300D66668 /* SubjectColorDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E415A25F218B300D66668 /* SubjectColorDictionary.swift */; };
 		C55E416025F21B1400D66668 /* Mulish-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C55E415F25F21B1400D66668 /* Mulish-Regular.ttf */; };
-		C55E416A25F232B800D66668 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E416925F232B800D66668 /* Extension.swift */; };
+		C55E416A25F232B800D66668 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E416925F232B800D66668 /* Extensions.swift */; };
+		C55E417225F24EC700D66668 /* Lessons.json in Sources */ = {isa = PBXBuildFile; fileRef = C55E417125F24EC700D66668 /* Lessons.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +85,8 @@
 		C55E413525F1638E00D66668 /* VideoItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoItemTableViewCell.xib; sourceTree = "<group>"; };
 		C55E415A25F218B300D66668 /* SubjectColorDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectColorDictionary.swift; sourceTree = "<group>"; };
 		C55E415F25F21B1400D66668 /* Mulish-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Regular.ttf"; sourceTree = "<group>"; };
-		C55E416925F232B800D66668 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		C55E416925F232B800D66668 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C55E417125F24EC700D66668 /* Lessons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Lessons.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 			children = (
 				C55E40F525F128BC00D66668 /* Resource.json */,
 				C55E411025F1558900D66668 /* VideoResource.json */,
+				C55E417125F24EC700D66668 /* Lessons.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -233,7 +236,7 @@
 				C55E40CE25F0B4B800D66668 /* NetworkController.swift */,
 				C55E411525F1568400D66668 /* JSONLoader.swift */,
 				C55E415A25F218B300D66668 /* SubjectColorDictionary.swift */,
-				C55E416925F232B800D66668 /* Extension.swift */,
+				C55E416925F232B800D66668 /* Extensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -390,8 +393,9 @@
 				C55E40B025F0B37600D66668 /* Chapter.swift in Sources */,
 				C55E407425F0B26900D66668 /* AppDelegate.swift in Sources */,
 				C55E407625F0B26900D66668 /* SceneDelegate.swift in Sources */,
-				C55E416A25F232B800D66668 /* Extension.swift in Sources */,
+				C55E416A25F232B800D66668 /* Extensions.swift in Sources */,
 				C55E40B525F0B38D00D66668 /* Subject.swift in Sources */,
+				C55E417225F24EC700D66668 /* Lessons.json in Sources */,
 				C55E40A825F0B32900D66668 /* Lesson.swift in Sources */,
 				C55E411625F1568400D66668 /* JSONLoader.swift in Sources */,
 				C55E410425F1445500D66668 /* SubjectCollectionViewCell.swift in Sources */,

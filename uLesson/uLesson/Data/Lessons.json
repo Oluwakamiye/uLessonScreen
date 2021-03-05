@@ -1,0 +1,12 @@
+{
+    "data": [
+        {
+            "id": 3355,
+            "name": "Nim test",
+            "icon": "https://ulesson-staging.s3.eu-west-2.amazonaws.com/lesson_icons/icons/defaults/thumb/lesson.png",
+            "media_url": "https://d3t25pp8yd0ui8.cloudfront.net/free_videos/71/original/stapler-CPAC2j.mp4",
+            "subject_id": 5,
+            "chapter_id": 45
+        }
+    ]
+}

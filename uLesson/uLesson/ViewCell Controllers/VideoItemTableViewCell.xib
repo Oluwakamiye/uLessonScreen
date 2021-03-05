@@ -53,6 +53,9 @@
                             <constraint firstAttribute="height" constant="35" id="gjf-bW-iNG"/>
                         </constraints>
                         <state key="normal" image="play.fill" catalog="system"/>
+                        <connections>
+                            <action selector="onPlayButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ISr-ql-yMj"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -66,7 +69,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="cellBackgroundColor" destination="H2p-sc-9uM" id="VSz-DL-2nb"/>
+                <outlet property="cellBackgroundView" destination="H2p-sc-9uM" id="VSz-DL-2nb"/>
                 <outlet property="playButton" destination="Jp9-WX-VMs" id="sww-Y7-kjV"/>
                 <outlet property="subjectLabel" destination="C3u-YD-sFP" id="rIq-u3-duc"/>
                 <outlet property="topicLabel" destination="V5B-uL-AK7" id="a5z-sv-gOn"/>

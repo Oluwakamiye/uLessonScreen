@@ -13,11 +13,12 @@ class SubjectDetailsViewController: UIViewController {
     @IBOutlet weak var mainStackView: UIStackView!
     var subject: Subject?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        mainStackView.isLayoutMarginsRelativeArrangement = true
+        mainStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 0)
         
         if let subject = subject{
             for chapter in subject.chapters{
@@ -27,7 +28,7 @@ class SubjectDetailsViewController: UIViewController {
         
     }
     
-    func navigateToVideoController(_ url: String, isAutoPlay: Bool){
+    func navigateToVideoController(_ url: String, isAutoPlay: Bool = true){
         guard let url = URL(string: url) else {
             return
         }
@@ -48,12 +49,6 @@ class SubjectDetailsViewController: UIViewController {
     }
     
     func addSubjectChapterView(chapter: Chapter){
-        let verticalStack = UIStackView()
-        verticalStack.axis = .vertical
-        verticalStack.backgroundColor = .brown
-        verticalStack.distribution = .fill
-        verticalStack.alignment = .leading
-            
         let descriptionLabel = UILabel()
         descriptionLabel.font = UIFont(name: "Itim", size: 24)
         descriptionLabel.text  = chapter.name
@@ -65,29 +60,39 @@ class SubjectDetailsViewController: UIViewController {
         horizontalLessonStack.axis = .horizontal
         horizontalLessonStack.distribution = .fillEqually
         horizontalLessonStack.spacing = 12
-            
+        
         for lesson in chapter.lessons{
-            horizontalLessonStack.addArrangedSubview(returnLessonView(lesson: lesson))
+            horizontalLessonStack.addArrangedSubview(returnAllLessonsInAChapterView(lesson: lesson))
         }
-         
-        verticalStack.addArrangedSubview(descriptionLabel)
-        verticalStack.addArrangedSubview(horizontalLessonStack)
         
-        mainStackView.addArrangedSubview(verticalStack)
+        let verticalTopicStack = UIStackView()
+        verticalTopicStack.axis = .vertical
+        verticalTopicStack.distribution = .fill
+        verticalTopicStack.alignment = .leading
+        verticalTopicStack.spacing = 7
+        verticalTopicStack.addArrangedSubview(descriptionLabel)
+        verticalTopicStack.addArrangedSubview(horizontalLessonStack)
         
+        mainStackView.addArrangedSubview(verticalTopicStack)
     }
     
-    func returnLessonView(lesson: Lesson) -> UIStackView{
+    func returnAllLessonsInAChapterView(lesson: Lesson) -> UIStackView{
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.blue
         imageView.heightAnchor.constraint(equalToConstant: 90).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        imageView.image = UIImage(named: "video_thumbnail_1")
+        if let lessonThumbNail = URL(string: lesson.icon){
+            imageView.load(url: lessonThumbNail, defaultImageName: "arrow.triangle.2.circlepath.circle")
+        } else {
+            imageView.image = UIImage(systemName: "arrow.triangle.2.circlepath.circle")
+            imageView.backgroundColor = .gray
+            imageView.tintColor = .white
+            imageView.contentMode = .scaleAspectFit
+        }
         
-
+        
         //Text Label
         let textLabel = UILabel()
-        textLabel.backgroundColor = UIColor.yellow
+        textLabel.font = UIFont(name: "Mulish", size: 14)
         textLabel.widthAnchor.constraint(equalToConstant: 110).isActive = true
         textLabel.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
         textLabel.text  = lesson.name
@@ -98,32 +103,32 @@ class SubjectDetailsViewController: UIViewController {
         verticalStack.axis = .vertical
         verticalStack.alignment = .center
         verticalStack.spacing = 12
-        
-        
         verticalStack.addArrangedSubview(imageView)
         verticalStack.addArrangedSubview(textLabel)
-        
         verticalStack.isLayoutMarginsRelativeArrangement = true
-        verticalStack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+        verticalStack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 15, leading: 10, bottom: 15, trailing: 10)
         verticalStack.backgroundColor = UIColor.white
-        verticalStack.layer.cornerRadius = 15
+        verticalStack.layer.cornerRadius = 9
+        verticalStack.tag = lesson.id
         
-        let screenSize: CGRect = UIScreen.main.bounds
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width - 10, height: 10))
-
-//        let view = UIView()
-        view.addSubview(verticalStack)
+        var tapGestureRecognizer = UITapGestureRecognizer()
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.onCellTapped(_:)))
+        verticalStack.gestureRecognizers = [ tapGestureRecognizer ]
+        
         return verticalStack
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onCellTapped(_ sender: UITapGestureRecognizer?){
+        if let tag = sender?.view?.tag, let subject = subject{
+            guard let selectedChapter = subject.chapters.first(where: {$0.lessons.contains(where: {lesson in return lesson.id ==  tag})})
+            else {
+                return
+            }
+            guard let lesson = selectedChapter.lessons.first(where: {lesson in return  lesson.id ==  tag})
+            else {
+                return
+            }
+            self.navigateToVideoController(lesson.mediaURL)
+        }
     }
-    */
-
 }

@@ -14,7 +14,7 @@ import FoundationNetworking
 
 class NetworkController {
     
-    func makeGetCall<T: Decodable>(_ urlString: String, completionHandler: @escaping (T) -> Void, errorHandler: @escaping (String) -> Void) {
+    static func makeGetCall<T: Decodable>(_ urlString: String, errorHandler: @escaping (String) -> Void, completionHandler: @escaping (T) -> Void) {
         if let url = URL(string: urlString){
             var request = URLRequest(url: url)
             request.httpMethod = "GET"

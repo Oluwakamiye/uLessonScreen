@@ -12,14 +12,18 @@ class VideoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var videoImage: UIImageView!
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var topicLabel: UILabel!
-    @IBOutlet weak var cellBackgroundColor: UIView!
+    @IBOutlet weak var cellBackgroundView: UIView!
     @IBOutlet weak var playButton: UIButton!
+    
+    var tapGestureRecognizer = UITapGestureRecognizer()
+    var actionToTake: () -> Void = {}
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.onCellTapped(_:)))
+        cellBackgroundView.gestureRecognizers = [ tapGestureRecognizer ]
     }
     
     override func layoutSubviews() {
@@ -35,4 +39,11 @@ class VideoItemTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func onPlayButtonTapped(_ sender: UIButton?){
+        self.actionToTake()
+    }
+    
+    @IBAction func onCellTapped(_ sender: UITapGestureRecognizer?){
+        self.actionToTake()
+    }
 }
