@@ -1,0 +1,34 @@
+{
+    "data" : [
+        {
+            "subject":"Biology",
+            "imageName":"video_thumbnail_1",
+            "topic":"Animals and Plants",
+            "urlString":"https://d3t25pp8yd0ui8.cloudfront.net/free_videos/70/original/stapler-bRXerd.MP4"
+        },
+        {
+            "subject":"Mathematics",
+            "imageName":"video_thumbnail_2",
+            "topic":"Numbers and its Properties",
+            "urlString":"https://d3t25pp8yd0ui8.cloudfront.net/free_videos/70/original/stapler-bRXerd.MP4"
+        },
+        {
+            "subject":"Physics",
+            "imageName":"video_thumbnail_3",
+            "topic":"Friction and Forces",
+            "urlString":"https://d3t25pp8yd0ui8.cloudfront.net/free_videos/70/original/stapler-bRXerd.MP4"
+        },
+        {
+            "subject":"Chemistry",
+            "imageName":"video_thumbnail_4",
+            "topic":"Acids and Bases",
+            "urlString":"https://d3t25pp8yd0ui8.cloudfront.net/free_videos/70/original/stapler-bRXerd.MP4"
+        },
+        {
+            "subject":"English",
+            "imageName":"video_thumbnail_5",
+            "topic":"Vocabulary Blocks",
+            "urlString":"https://d3t25pp8yd0ui8.cloudfront.net/free_videos/70/original/stapler-bRXerd.MP4"
+        }
+    ]
+}
