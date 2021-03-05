@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 var subjectColorDictionary: [String: UIColor] = [
-    "English":UIColor(named: "CustomBlue")!,
-    "Biology":UIColor(named: "CustomGreen")!,
-    "Mathematics":UIColor(named: "CustomPeach")!,
-    "Physics":UIColor(named: "CustomPurple")!,
-    "Chemistry":UIColor(named: "CustomYellow")!
+    "English": UIColor(named: "CustomBlue")!,
+    "Biology": UIColor(named: "CustomGreen")!,
+    "Mathematics": UIColor(named: "CustomPeach")!,
+    "Physics": UIColor(named: "CustomPurple")!,
+    "Chemistry": UIColor(named: "CustomYellow")!
 ]
