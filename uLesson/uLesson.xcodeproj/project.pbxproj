@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C500B87225F0D84100A61A86 /* SubjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C500B87125F0D84100A61A86 /* SubjectDetailsViewController.swift */; };
+		C549EB0A25F26E2000509117 /* HomeUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = C549EB0925F26E2000509117 /* HomeUrls.swift */; };
 		C55E407425F0B26900D66668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E407325F0B26900D66668 /* AppDelegate.swift */; };
 		C55E407625F0B26900D66668 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E407525F0B26900D66668 /* SceneDelegate.swift */; };
 		C55E407825F0B26900D66668 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55E407725F0B26900D66668 /* HomeViewController.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		C500B87125F0D84100A61A86 /* SubjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailsViewController.swift; sourceTree = "<group>"; };
+		C549EB0925F26E2000509117 /* HomeUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUrls.swift; sourceTree = "<group>"; };
 		C55E407025F0B26900D66668 /* uLesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uLesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55E407325F0B26900D66668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C55E407525F0B26900D66668 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				C55E411525F1568400D66668 /* JSONLoader.swift */,
 				C55E415A25F218B300D66668 /* SubjectColorDictionary.swift */,
 				C55E416925F232B800D66668 /* Extensions.swift */,
+				C549EB0925F26E2000509117 /* HomeUrls.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				C55E415B25F218B300D66668 /* SubjectColorDictionary.swift in Sources */,
 				C500B87225F0D84100A61A86 /* SubjectDetailsViewController.swift in Sources */,
 				C55E412D25F15E3700D66668 /* Courses.swift in Sources */,
+				C549EB0A25F26E2000509117 /* HomeUrls.swift in Sources */,
 				C55E413625F1638E00D66668 /* VideoItemTableViewCell.swift in Sources */,
 				C55E407825F0B26900D66668 /* HomeViewController.swift in Sources */,
 				C55E40B025F0B37600D66668 /* Chapter.swift in Sources */,

@@ -63,13 +63,12 @@ class HomeViewController: UIViewController{
         response = loadJSONFromFileToObject("Resource.json")
         videoThumbNails = loadJSONFromFileToObject("VideoResource.json")
         
-        NetworkController.makeGetCall("", errorHandler: {
+        NetworkController.makeGetCall(homeURL, errorHandler: {
             errorString in
             
             let alert = UIAlertController(title: "Error loading data", message: "We could not load online data. We will continue with offline data", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
         }){
             response in
             self.processResponseFromNetwork(responseObject: response)

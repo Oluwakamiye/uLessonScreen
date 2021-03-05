@@ -30,16 +30,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="374.66666666666669" height="900"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lwc-d7-0ah">
-                                                <rect key="frame" x="8" y="28" width="358.66666666666669" height="666.33333333333337"/>
+                                                <rect key="frame" x="8" y="28" width="358.66666666666669" height="668.66666666666663"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Simbi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-qq-szf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="358.66666666666669" height="37.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="358.66666666666669" height="38.666666666666664"/>
                                                         <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="32"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-zX-oUO">
-                                                        <rect key="frame" x="0.0" y="47.333333333333343" width="358.66666666666669" height="240.00000000000003"/>
+                                                        <rect key="frame" x="0.0" y="48.666666666666657" width="358.66666666666669" height="239.99999999999997"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="240" id="uqg-fe-OX6"/>
@@ -91,20 +91,20 @@
                                                         </cells>
                                                     </collectionView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently watched topics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWz-7r-9xo">
-                                                        <rect key="frame" x="0.0" y="297.33333333333331" width="358.66666666666669" height="28"/>
+                                                        <rect key="frame" x="0.0" y="298.66666666666669" width="358.66666666666669" height="29"/>
                                                         <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0LF-jM-0Ql">
-                                                        <rect key="frame" x="0.0" y="335.33333333333331" width="358.66666666666669" height="271.99999999999994"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <rect key="frame" x="0.0" y="337.66666666666669" width="358.66666666666669" height="272.00000000000006"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="272" id="Vxm-Gd-VKM"/>
                                                         </constraints>
                                                     </tableView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUB-v0-23d">
-                                                        <rect key="frame" x="0.0" y="617.33333333333337" width="358.66666666666669" height="49"/>
+                                                        <rect key="frame" x="0.0" y="619.66666666666663" width="358.66666666666669" height="49"/>
                                                         <state key="normal" image="HomeButtonImage"/>
                                                         <connections>
                                                             <action selector="seeMoreVideos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="07i-Q6-ibz"/>
@@ -134,7 +134,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="uLessonGrayBackground"/>
                         <constraints>
                             <constraint firstItem="eI0-fA-VZ4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ALx-7H-Ybs"/>
                             <constraint firstItem="eI0-fA-VZ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aoc-Pg-mPD"/>
