@@ -15,7 +15,7 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var homeBackgroundView: UIView!
     
-    var response : ULessonResponseObject?
+    var response: ULessonResponseObject?
     var videoThumbNails: VideoThumbNailList?
     
     var numberOfDisplayedVideos: Int = 0
@@ -183,7 +183,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0;
+        return 100.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

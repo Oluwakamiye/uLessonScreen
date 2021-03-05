@@ -11,28 +11,26 @@ import Foundation
 import FoundationNetworking
 #endif
 
-
 class NetworkController {
-    
-    static func makeGetCall<T: Decodable>(_ urlString: String, errorHandler: @escaping (String) -> Void, completionHandler: @escaping (T) -> Void) {
-        if let url = URL(string: urlString){
+    static func makeGetCall<T: Decodable>(_ urlString: String,
+                                          errorHandler: @escaping (String) -> Void,
+                                          completionHandler: @escaping (T) -> Void) {
+        if let url = URL(string: urlString) {
             var request = URLRequest(url: url)
             request.httpMethod = "GET"
-            
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
                 if let responseData = data {
-                    do{
+                    do {
                         let decoder = JSONDecoder()
                         let model = try decoder.decode(T.self, from: responseData)
                         completionHandler(model)
-                    } catch{
-                        errorHandler("An error occurred")
+                    } catch {
+                        errorHandler(error.localizedDescription)
                     }
-                } else{
+                } else {
                     errorHandler("An error occurred")
                 }
             }
-            
             task.resume()
         } else {
             errorHandler("An error occurred")
