@@ -22,7 +22,8 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.backgroundColor = UIColor(named: "uLessonGrayBackground")
+        tableView.backgroundColor = .clear
+        collectionView.backgroundColor = .clear
         // Do any additional setup after loading the view.
         loadResponseObject()
         setNumberOfDisplayedVideos()
@@ -59,6 +60,7 @@ class HomeViewController: UIViewController{
     
     @IBAction func seeMoreVideos(_ sender: UIButton){
         setNumberOfDisplayedVideos()
+        sender.imageView?.image = isShowingAllVideos ? UIImage(named: "HomeButtonImage2") : UIImage(named: "HomeButtonImage")
         tableView.reloadData()
         collectionView.reloadData()
     }
@@ -68,8 +70,6 @@ class HomeViewController: UIViewController{
             if isShowingAllVideos{
                 numberOfDisplayedVideos = videoThumbNails.data.count
             } else {
-                //TODO:- LIST OF VIDEOS
-                
                 numberOfDisplayedVideos = 2
             }
         } else {
@@ -100,6 +100,34 @@ class HomeViewController: UIViewController{
 }
 
 
+// MARK:- CollectionView Implementation
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let response = response {
+            return response.courses.subjects.count
+        } else {
+            return 0
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubjectCollectionViewCell", for: indexPath) as! SubjectCollectionViewCell
+        let currentSubject = response?.courses.subjects[indexPath.row]
+        
+        cell.cellLabel.text = currentSubject!.name.uppercased()
+        cell.cellLabel.textColor = UIColor.white
+        cell.cellLabel.font = UIFont(name: "Mulish", size: 12)
+        cell.cellImage.image = UIImage(named: "Icon_\(currentSubject!.name.capitalized)")
+        cell.cellbackground.layer.cornerRadius = 13
+        cell.cellbackground.backgroundColor = subjectColorDictionary[currentSubject!.name.capitalized]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let frameWidth = collectionView.frame.width / 2
+        return CGSize(width: frameWidth -  5, height: 80)
+    }
+}
 
 
 // MARK:- TableView Implementation
@@ -111,43 +139,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoItemTableViewCell", for: indexPath) as! VideoItemTableViewCell
         let videoThumbNailItem = videoThumbNails?.data[indexPath.row]
+        
         cell.videoImage.image = UIImage(named: videoThumbNailItem?.imageName ?? "video_thumbnail_4")
+        cell.videoImage.layer.cornerRadius = 11
         cell.subjectLabel.text = videoThumbNailItem?.subject
+        cell.subjectLabel.font = UIFont(name: "Mulish", size: 12)
+        cell.subjectLabel.textColor = subjectColorDictionary[videoThumbNailItem!.subject.capitalized]
         cell.topicLabel.text = videoThumbNailItem?.topic
-        return cell
-    }
-}
-
-
-
-
-// MARK:- CollectionView Implementation
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let response = response {
-            return response.courses.subjects.count
-        } else {
-            return 0
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubjectCollectionViewCell", for: indexPath) as! SubjectCollectionViewCell
-        
-        let currentSubject = response?.courses.subjects[indexPath.row]
-        
-        cell.cellLabel.text = currentSubject!.name
-//        cell.cellLabel.textColor = UIColor.white
-        cell.cellbackground.layer.cornerRadius = 13
-        cell.cellbackground.backgroundColor = UIColor(named: "CustomBlue")
+        cell.topicLabel.font = UIFont(name: "Mulish", size: 15)
+        cell.cellBackgroundColor.backgroundColor = .clear
+        cell.playButton.tintColor = subjectColorDictionary[videoThumbNailItem!.subject.capitalized]
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let frameWidth = collectionView.frame.width / 2
-        return CGSize(width: collectionView.frame.width, height: 50)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0;
     }
-    
-    
 }

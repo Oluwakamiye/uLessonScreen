@@ -29,8 +29,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kp2-06-FFV" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="374.66666666666669" height="1000"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lwc-d7-0ah">
-                                                <rect key="frame" x="8" y="28" width="358.66666666666669" height="609.66666666666663"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lwc-d7-0ah">
+                                                <rect key="frame" x="8" y="28" width="358.66666666666669" height="668.66666666666663"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Simbi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-qq-szf">
                                                         <rect key="frame" x="0.0" y="0.0" width="358.66666666666669" height="38.666666666666664"/>
@@ -39,7 +39,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-zX-oUO">
-                                                        <rect key="frame" x="0.0" y="38.666666666666657" width="358.66666666666669" height="239.99999999999997"/>
+                                                        <rect key="frame" x="0.0" y="48.666666666666657" width="358.66666666666669" height="239.99999999999997"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="240" id="uqg-fe-OX6"/>
@@ -61,17 +61,28 @@
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nk-hP-zjV">
                                                                             <rect key="frame" x="114.66666666666667" y="57.666666666666664" width="41.333333333333329" height="20.333333333333336"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
+                                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_Biology" translatesAutoresizingMaskIntoConstraints="NO" id="A9a-zT-oqB">
+                                                                            <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="30" id="68t-Dc-Cfd"/>
+                                                                                <constraint firstAttribute="height" constant="30" id="RY4-K3-FKj"/>
+                                                                            </constraints>
+                                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                                        </imageView>
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="0nk-hP-zjV" secondAttribute="bottom" constant="12" id="0rO-O3-Y1J"/>
+                                                                        <constraint firstItem="A9a-zT-oqB" firstAttribute="top" secondItem="opv-UT-Htf" secondAttribute="top" constant="10" id="HsB-bc-A2N"/>
+                                                                        <constraint firstItem="A9a-zT-oqB" firstAttribute="leading" secondItem="opv-UT-Htf" secondAttribute="leading" constant="10" id="P0L-27-B9m"/>
                                                                         <constraint firstAttribute="trailing" secondItem="0nk-hP-zjV" secondAttribute="trailing" constant="12" id="u9I-lJ-Ssi"/>
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="168" height="90"/>
                                                                 <connections>
+                                                                    <outlet property="cellImage" destination="A9a-zT-oqB" id="thn-aN-Qha"/>
                                                                     <outlet property="cellLabel" destination="0nk-hP-zjV" id="uzL-2H-126"/>
                                                                     <outlet property="cellbackground" destination="opv-UT-Htf" id="3zI-xm-xtf"/>
                                                                     <segue destination="AMo-f7-u54" kind="show" identifier="HomeToSubjectDetailsSegue" id="k0T-e7-Chb"/>
@@ -80,21 +91,21 @@
                                                         </cells>
                                                     </collectionView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recently watched topics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWz-7r-9xo">
-                                                        <rect key="frame" x="0.0" y="278.66666666666669" width="358.66666666666669" height="29"/>
+                                                        <rect key="frame" x="0.0" y="298.66666666666669" width="358.66666666666669" height="29"/>
                                                         <fontDescription key="fontDescription" name="Itim-Regular" family="Itim" pointSize="24"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0LF-jM-0Ql">
-                                                        <rect key="frame" x="0.0" y="307.66666666666669" width="358.66666666666669" height="272.00000000000006"/>
+                                                        <rect key="frame" x="0.0" y="337.66666666666669" width="358.66666666666669" height="272.00000000000006"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="272" id="Vxm-Gd-VKM"/>
                                                         </constraints>
                                                     </tableView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUB-v0-23d">
-                                                        <rect key="frame" x="0.0" y="579.66666666666663" width="358.66666666666669" height="30"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUB-v0-23d">
+                                                        <rect key="frame" x="0.0" y="619.66666666666663" width="358.66666666666669" height="49"/>
+                                                        <state key="normal" image="HomeButtonImage"/>
                                                         <connections>
                                                             <action selector="seeMoreVideos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="07i-Q6-ibz"/>
                                                         </connections>
@@ -189,6 +200,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HomeButtonImage" width="320" height="49"/>
+        <image name="Icon_Biology" width="29" height="35"/>
         <namedColor name="uLessonGrayBackground">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

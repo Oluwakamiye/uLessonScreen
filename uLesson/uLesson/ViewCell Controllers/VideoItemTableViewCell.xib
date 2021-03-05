@@ -19,15 +19,15 @@
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IlY-1X-fr4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video_thumbnail_1" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-iM-CVV">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="102"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.30980392159999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video_thumbnail_1" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-iM-CVV">
+                                <rect key="frame" x="0.0" y="1" width="127" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="5Z9-FK-a6F"/>
+                                    <constraint firstAttribute="width" constant="127" id="GcP-cx-1i5"/>
+                                    <constraint firstAttribute="height" constant="100" id="gS9-sq-PQi"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9eY-gJ-9js">
-                                <rect key="frame" x="158" y="34.5" width="162" height="33.5"/>
+                                <rect key="frame" x="135" y="34.5" width="185" height="33.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3u-YD-sFP">
                                         <rect key="frame" x="0.0" y="0.0" width="28.5" height="13.5"/>
@@ -44,22 +44,30 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="eY9-iM-CVV" firstAttribute="top" secondItem="IlY-1X-fr4" secondAttribute="top" id="5fP-PJ-1jK"/>
-                            <constraint firstAttribute="height" constant="102" id="JPT-S0-c3w"/>
-                            <constraint firstItem="eY9-iM-CVV" firstAttribute="leading" secondItem="IlY-1X-fr4" secondAttribute="leading" id="jhJ-yZ-6Rg"/>
-                        </constraints>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp9-WX-VMs">
+                        <rect key="frame" x="46" y="33.5" width="35" height="35"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="cjb-Eg-IKv"/>
+                            <constraint firstAttribute="height" constant="35" id="gjf-bW-iNG"/>
+                        </constraints>
+                        <state key="normal" image="play.fill" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="IlY-1X-fr4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Pp2-0k-htZ"/>
-                    <constraint firstAttribute="bottom" secondItem="IlY-1X-fr4" secondAttribute="bottom" id="aMT-1g-DF5"/>
-                    <constraint firstItem="IlY-1X-fr4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="h9O-rP-Bxr"/>
-                    <constraint firstAttribute="trailing" secondItem="IlY-1X-fr4" secondAttribute="trailing" id="thD-4A-RZL"/>
+                    <constraint firstAttribute="trailing" secondItem="IlY-1X-fr4" secondAttribute="trailing" id="B6P-LJ-Tfi"/>
+                    <constraint firstItem="IlY-1X-fr4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="BDf-zR-FN6"/>
+                    <constraint firstItem="IlY-1X-fr4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FIs-hE-Pks"/>
+                    <constraint firstAttribute="bottom" secondItem="IlY-1X-fr4" secondAttribute="bottom" id="mPu-cF-fWH"/>
+                    <constraint firstItem="Jp9-WX-VMs" firstAttribute="centerX" secondItem="eY9-iM-CVV" secondAttribute="centerX" id="rUH-mz-nno"/>
+                    <constraint firstItem="Jp9-WX-VMs" firstAttribute="centerY" secondItem="eY9-iM-CVV" secondAttribute="centerY" id="y0p-oS-Ouf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellBackgroundColor" destination="H2p-sc-9uM" id="VSz-DL-2nb"/>
+                <outlet property="playButton" destination="Jp9-WX-VMs" id="sww-Y7-kjV"/>
                 <outlet property="subjectLabel" destination="C3u-YD-sFP" id="rIq-u3-duc"/>
                 <outlet property="topicLabel" destination="V5B-uL-AK7" id="a5z-sv-gOn"/>
                 <outlet property="videoImage" destination="eY9-iM-CVV" id="IJe-em-gsZ"/>
@@ -68,6 +76,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="video_thumbnail_1" width="30" height="20"/>
     </resources>
 </document>
