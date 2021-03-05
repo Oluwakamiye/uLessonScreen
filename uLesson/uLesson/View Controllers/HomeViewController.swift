@@ -13,6 +13,7 @@ class HomeViewController: UIViewController{
     //Links to views from storyboard
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var homeBackgroundView: UIView!
     
     var response : ULessonResponseObject?
     var videoThumbNails: VideoThumbNailList?
@@ -23,10 +24,11 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // Customise views
         tableView.backgroundColor = .clear
         collectionView.backgroundColor = .clear
         
+        //load data
         loadData()
         setNumberOfDisplayedVideos()
         
@@ -82,8 +84,8 @@ class HomeViewController: UIViewController{
     
     //Button action to display more items on the tableview
     @IBAction func seeMoreVideos(_ sender: UIButton){
+        sender.setImage(isShowingAllVideos ? UIImage(named: "HomeButtonImage2") : UIImage(named: "HomeButtonImage"), for: .normal)
         setNumberOfDisplayedVideos()
-        sender.imageView?.image = isShowingAllVideos ? UIImage(named: "HomeButtonImage2") : UIImage(named: "HomeButtonImage")
         tableView.reloadData()
         collectionView.reloadData()
     }
