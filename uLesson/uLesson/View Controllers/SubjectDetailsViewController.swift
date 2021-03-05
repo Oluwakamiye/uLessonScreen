@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class SubjectDetailsViewController: UIViewController {
     
@@ -24,6 +25,26 @@ class SubjectDetailsViewController: UIViewController {
             }
         }
         
+    }
+    
+    func navigateToVideoController(_ url: String, isAutoPlay: Bool){
+        guard let url = URL(string: url) else {
+            return
+        }
+        // Create an AVPlayer, pass it the HTTP Live Streaming URL.
+        let player = AVPlayer(url: url)
+
+        // Create a new AVPlayerViewController and pass it a reference to the player.
+        let controller = AVPlayerViewController()
+        controller.player = player
+        
+        //display videoPlayer
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true) {
+            if isAutoPlay {
+                player.play()
+            }
+        }
     }
     
     func addSubjectChapterView(chapter: Chapter){

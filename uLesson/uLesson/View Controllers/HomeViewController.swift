@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class HomeViewController: UIViewController{
     
@@ -21,6 +22,7 @@ class HomeViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundColor = UIColor(named: "uLessonGrayBackground")
         // Do any additional setup after loading the view.
         loadResponseObject()
         setNumberOfDisplayedVideos()
@@ -44,6 +46,7 @@ class HomeViewController: UIViewController{
                 subjectDetailsViewController.subject = response?.courses.subjects[selectedRowIndex]
                 let backItem = UIBarButtonItem()
                 backItem.title = response?.courses.subjects[selectedRowIndex].name
+                
                 navigationItem.backBarButtonItem = backItem
             }
         }
@@ -75,7 +78,25 @@ class HomeViewController: UIViewController{
         isShowingAllVideos.toggle()
     }
     
-    
+    func navigateToVideoController(_ url: String, isAutoPlay: Bool){
+        guard let url = URL(string: url) else {
+            return
+        }
+        // Create an AVPlayer, pass it the HTTP Live Streaming URL.
+        let player = AVPlayer(url: url)
+
+        // Create a new AVPlayerViewController and pass it a reference to the player.
+        let controller = AVPlayerViewController()
+        controller.player = player
+        
+        //display videoPlayer
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true) {
+            if isAutoPlay {
+                player.play()
+            }
+        }
+    }
 }
 
 
@@ -91,9 +112,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoItemTableViewCell", for: indexPath) as! VideoItemTableViewCell
         let videoThumbNailItem = videoThumbNails?.data[indexPath.row]
         cell.videoImage.image = UIImage(named: videoThumbNailItem?.imageName ?? "video_thumbnail_4")
-            
-            
-//            UIImageView(image: UIImage(named: videoThumbNailItem?.imageName ?? "video_thumbnail_4"))
         cell.subjectLabel.text = videoThumbNailItem?.subject
         cell.topicLabel.text = videoThumbNailItem?.topic
         return cell
@@ -128,10 +146,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let frameWidth = collectionView.frame.width / 2
-        return CGSize(width: frameWidth - 7, height: 50)
+        return CGSize(width: collectionView.frame.width, height: 50)
     }
-    
-    
     
     
 }
