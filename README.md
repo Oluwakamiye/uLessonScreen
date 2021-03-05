@@ -53,5 +53,7 @@ I used the embedded Navigation link to provide the required navigation service f
 11. Customization
 I used images and colors to customise the views after initial creation and functionalities were added. The images used for icons are all in the pdf format to save space, the thumbnails in the assets folder are png files and they are provided in the various required size. This was done to ensure sharpness of the images and to save space used by the app.
 
+12. App Versioning
+I used git to provide app versioning capabilities on the project. I used a develop branch for changes and I merged app changes to the main branch using the pul request feature. This is done as a standard to prevent directly overwriting the main from a local repo.
 
 Development of this project was centered around fulfilling the designers designs, as well as keeping the app size to a minimum while ensuring minimum footprint on the device battery and storage space
